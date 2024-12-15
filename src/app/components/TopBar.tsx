@@ -1,19 +1,20 @@
 'use client';
 import Link from "next/link";
-import { FaEnvelope, FaPhoneAlt, FaUser, FaHeart, FaShoppingCart } from 'react-icons/fa';
+import { FaEnvelope, FaPhoneAlt, FaUser,  } from 'react-icons/fa';
 import { useState } from 'react';
+import { HeartIcon, ShoppingCartIcon } from "@heroicons/react/24/outline";
 
 const TopBar = () => {
   const [languageDropdown, setLanguageDropdown] = useState(false);
   const [currencyDropdown, setCurrencyDropdown] = useState(false);
 
   return (
-    <div className="bg-violet-700 text-white py-2 text-sm">
-      <div className="w-full max-w-[1200px] mx-auto flex items-center justify-between px-4 whitespace-nowrap">
+    <div className="bg-violet-700 text-white py-2 text-sm ">
+      <div className="w-full max-w-[1200px] mx-auto  flex items-center justify-around px-4 whitespace-nowrap">
         {/* Left Section */}
         <div className="flex items-center gap-6">
           {/* Email */}
-          <a href="mailto:mhhasanul@gmail.com" className="flex items-center gap-2 hover:text-gray-200">
+          <a href="mailto:mhhasanul@gmail.com" className="flex items-center gap-2  hover:text-gray-200">
             <FaEnvelope />
             <span>mhhasanul@gmail.com</span>
           </a>
@@ -63,11 +64,20 @@ const TopBar = () => {
 
           {/* Login */}
 <li className="flex items-center gap-2 hover:text-gray-200">
-  <Link href="/account">
-    <FaUser />
+  <Link href="/account" className="flex">
+  <span>login</span><FaUser />
   </Link>
 </li>
-
+<div className="hidden sm:flex items-center gap-x-6">
+          
+            <Link href="/wishlist" className="hover:text-[#FB2E86] transition-colors flex items-center gap-1">
+            <span>Wishlist</span>
+              <HeartIcon className="w-5 h-5" />
+            </Link>
+            <Link href="/cart" className="hover:text-[#FB2E86] transition-colors flex items-center gap-1">
+              <ShoppingCartIcon className="w-5 h-5" />
+            </Link>
+          </div>
 
         </div>
       </div>

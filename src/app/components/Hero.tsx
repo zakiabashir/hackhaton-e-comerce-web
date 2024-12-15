@@ -10,10 +10,10 @@ function Hero() {
     <div className="relative w-full bg-[#F3F3F3] overflow-hidden flex flex-col md:flex-row items-center justify-between">
 
       {/* Left Section for Mobile & Desktop */}
-      <div className="w-full lg:justify- md:w-1/2 h-full flex flex-col md:flex-row items-center justify-start pl-6 md:pl-16 relative">
+      <div className="w-full md:w-1/2 h-full flex flex-col md:flex-row items-center justify-start pl-6 md:pl-16 relative">
 
         {/* Bulb Image */}
-<div className="relative md:absolute lg: top-[-30px] left-[90px] md:left-[-100px]">
+<div className="relative md:absolute top-[-30px] left-[-30px] md:left-[-100px]">
   <Image src="/images/bulb.png" alt="Bulb" width={300} height={300} className="object-contain" />
 </div>
 

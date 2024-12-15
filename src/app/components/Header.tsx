@@ -29,16 +29,6 @@ function Header() {
             <h1 className="text-3xl font-bold">Hekto</h1>
 
             {/* Search Bar */}
-            <div className="hidden sm:flex items-center border rounded-md overflow-hidden bg-gray-100">
-              <input
-                type="text"
-                placeholder="What are you looking for?"
-                className="w-60 px-3 py-2 text-sm outline-none bg-transparent"
-              />
-              <button className="p-2 bg-[#FB2E86] text-white hover:bg-[#F94C9B] transition-colors">
-                <MagnifyingGlassIcon className="w-5 h-5" />
-              </button>
-            </div>
           </div>
 
           {/* Center Section: Navigation Links */}
@@ -109,17 +99,16 @@ function Header() {
           </div>
 
           {/* Right Section: Icons */}
-          <div className="hidden sm:flex items-center gap-x-6">
-            <Link href="/cart" className="hover:text-[#FB2E86] transition-colors flex items-center gap-1">
-              <ShoppingCartIcon className="w-5 h-5" />
-              <span>Cart</span>
-            </Link>
-            <Link href="/wishlist" className="hover:text-[#FB2E86] transition-colors flex items-center gap-1">
-              <HeartIcon className="w-5 h-5" />
-              <span>Wishlist</span>
-            </Link>
-          </div>
-
+          <div className="hidden sm:flex items-center border rounded-md overflow-hidden bg-gray-100">
+              <input
+                type="text"
+                placeholder="What are you looking for?"
+                className="w-60 px-3 py-2 text-sm outline-none bg-transparent"
+              />
+              <button className="p-2 bg-[#FB2E86] text-white hover:bg-[#F94C9B] transition-colors">
+                <MagnifyingGlassIcon className="w-5 h-5" />
+              </button>
+            </div>
           {/* Mobile Menu Toggle */}
           <button
             className="sm:hidden flex items-center"
@@ -205,6 +194,17 @@ function Header() {
             </li>
           </ul>
 
+{/* Mobile Cart and Wishlist */}
+<div className="flex justify-around px-4 py-2 border-t">
+            <Link href="/cart" className="flex items-center gap-1 text-sm hover:text-[#FB2E86]">
+              <ShoppingCartIcon className="w-5 h-5" />
+              <span>Cart</span>
+            </Link>
+            <Link href="#" className="flex items-center gap-1 text-sm hover:text-[#FB2E86]">
+              <HeartIcon className="w-5 h-5" />
+              <span>Wishlist</span>
+            </Link>
+          </div>
           {/* Mobile Search Bar */}
           <div className="flex items-center border rounded-md overflow-hidden bg-gray-100 px-4 py-2 mx-4 mt-4">
             <input
@@ -215,18 +215,6 @@ function Header() {
             <button className="p-2 bg-[#FB2E86] text-white hover:bg-[#F94C9B] transition-colors">
               <MagnifyingGlassIcon className="w-5 h-5" />
             </button>
-          </div>
-
-          {/* Mobile Cart and Wishlist */}
-          <div className="flex justify-around px-4 py-2 border-t">
-            <Link href="/cart" className="flex items-center gap-1 text-sm hover:text-[#FB2E86]">
-              <ShoppingCartIcon className="w-5 h-5" />
-              <span>Cart</span>
-            </Link>
-            <Link href="#" className="flex items-center gap-1 text-sm hover:text-[#FB2E86]">
-              <HeartIcon className="w-5 h-5" />
-              <span>Wishlist</span>
-            </Link>
           </div>
         </div>
       )}
