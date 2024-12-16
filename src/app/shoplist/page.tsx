@@ -168,59 +168,64 @@ const ShopList = () => {
 
               {/* Product Details */}
               <div className="lg:w-2/3 lg:ml-6 mt-4 lg:mt-0">
-                <div className="w-full flex justify-between items-center">
-                  <h3 className="text-xl font-semibold">{product.name}</h3>
-                  {/* Color Options */}
-                  <div className="mt-2 flex gap-1">
-                    {product.colors.map((color, index) => (
-                      <span
-                        key={index}
-                        className={`w-3 h-3 ${color} rounded-full`}
-                      ></span>
-                    ))}
-                  </div>
-                </div>
+  <div className="w-full flex justify-between items-center">
+    <h3 className="text-xl font-semibold">{product.name}</h3>
+    {/* Color Options */}
+    <div className="mt-2 flex gap-1">
+      {product.colors.map((color, index) => (
+        <span
+          key={index}
+          className={`w-3 h-3 ${color} rounded-full`}
+        ></span>
+      ))}
+    </div>
+  </div>
 
-                {/* Price and Old Price */}
-                <div className="mt-4 flex items-center space-x-2">
-                  <span className="text-lg font-bold">{product.price}</span>
-                  <span className="text-red-500 line-through">
-                    {product.oldPrice}
-                  </span>
-                </div>
-                <p className="mt-2 text-gray-600 w-96">{product.description}</p>
+  {/* Price and Old Price */}
+  <div className="mt-4 flex items-center space-x-2">
+    <span className="text-lg font-bold">{product.price}</span>
+    <span className="text-red-500 line-through">
+      {product.oldPrice}
+    </span>
+  </div>
 
-                {/* Rating */}
-                <div className="mt-2 flex items-center">
-                  {Array.from({ length: 5 }).map((_, index) => (
-                    <span
-                      key={index}
-                      className={`${
-                        index < product.rating
-                          ? "text-yellow-400"
-                          : "text-gray-300"
-                      } text-lg`}
-                    >
-                      ★
-                    </span>
-                  ))}
-                </div>
+  {/* Description */}
+  <p className="mt-2 md:text-sm text-gray-600 w-full break-words">
+    {product.description}
+  </p>
 
-                {/* Action Buttons */}
-                <div className="mt-4 flex space-x-4">
-                  <button className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full hover:bg-gray-300">
-                    <AiOutlineHeart size={24} />
-                  </button>
-                  <Link href="/cart">
-                    <button className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full hover:bg-gray-300">
-                      <AiOutlineShoppingCart size={24} />
-                    </button>
-                  </Link>
-                  <button className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full hover:bg-gray-300">
-                    <AiOutlineEye size={24} />
-                  </button>
-                </div>
-              </div>
+  {/* Rating */}
+  <div className="mt-2 flex items-center">
+    {Array.from({ length: 5 }).map((_, index) => (
+      <span
+        key={index}
+        className={`${
+          index < product.rating
+            ? "text-yellow-400"
+            : "text-gray-300"
+        } text-lg`}
+      >
+        ★
+      </span>
+    ))}
+  </div>
+
+  {/* Action Buttons */}
+  <div className="mt-4 flex space-x-4">
+    <button className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full hover:bg-gray-300">
+      <AiOutlineHeart size={24} />
+    </button>
+    <Link href="/cart">
+      <button className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full hover:bg-gray-300">
+        <AiOutlineShoppingCart size={24} />
+      </button>
+    </Link>
+    <button className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full hover:bg-gray-300">
+      <AiOutlineEye size={24} />
+    </button>
+  </div>
+</div>
+
             </div>
           ))}
         </div>

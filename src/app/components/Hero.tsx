@@ -4,19 +4,19 @@ import Image from 'next/image';
 
 function Hero() {
   return (
-    <div className="flex  my-0 py-0 md:flex-row items-center justify-center mx-auto gap-8 px-6 md:px-12 lg:px-20 max-w-[1920px] max-h-[786px] md:h-[764px] relative">
+    <div className="flex sm:my-28  md:my-4 py-0 md:flex-row sm:flex-col items-center justify-center mx-auto gap-8 px-6 md:px-12 lg:px-20 max-w-[1920px] max-h-[786px] md:h-[764px] relative">
 
       {/* Left Section - Bulb and Text */}
       <div className="relative w-full md:w-1/2 flex flex-row  items-start justify-center text-center md:text-left">
         
         {/* Bulb Image */}
-        <div className=" mt-[-122px] md:top-0 left-[20px] md:left-[-20px] w-1/2 sm:w-[150px] md:w-[200px] lg:w-[387px]">
+        <div className=" mt-[-122px]  left-[20px] md:left-[-20px] w-1/2 sm:w-[150px] md:w-[200px] lg:w-[387px]">
           <Image
             src="/images/bulb.png"
             alt="Bulb"
             width={387}
             height={387}
-            className="object-contain"
+            className="object-contain "
           />
         </div>
 
@@ -48,7 +48,7 @@ function Hero() {
       </div>
 
       {/* Right Section - Pink Background, Sofa Image, Discount Badge */}
-      <div className="relative w-1/3 md:w-1/2 flex items-center justify-center">
+      <div className="relative w-1/3 md:w-1/2 flex flex-wrap items-center justify-center">
         {/* Pink Background Circle */}
         <div className="absolute top-10 md:top-[40px] w-[220px] sm:w-[300px] md:w-[380px] lg:w-[450px] h-[220px] sm:h-[300px] md:h-[380px] lg:h-[450px] bg-cover bg-center rounded-full z-0"
              style={{ backgroundImage: 'url(/images/pink.png)' }}>

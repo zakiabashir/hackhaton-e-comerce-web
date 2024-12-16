@@ -16,7 +16,7 @@ function CreatorPage() {
             <div className="flex-shrink-0">
               <Image
                 src="/images/profile.png" // Path to your image in the public folder
-                alt="Muqaddas Fatima"
+                alt="Zakia Bashir"
                 width={150}
                 height={150}
                 className="rounded-full shadow-lg-[#1D3178]"
@@ -27,13 +27,13 @@ function CreatorPage() {
                 About the Creator
               </h1>
               <p className="mt-4 text-gray-600 leading-relaxed text-sm sm:text-base">
-                Hi, I’m <span className="font-semibold">Muqaddas Fatima</span>, an enthusiastic developer exploring the limitless
-                opportunities in <span className="font-semibold">Generative AI</span>, the <span className="font-semibold">Metaverse</span>, and <span className="font-semibold">Cloud Technologies</span>. I specialize in creating interactive and innovative web solutions while staying ahead of cutting-edge trends.
-              </p>
-              <p className="mt-4 text-gray-600 leading-relaxed text-sm sm:text-base">
-                When I’m not coding, you’ll find me delving into new tech adventures, sharing ideas, or connecting with like-minded people to build
-                amazing projects.
-              </p>
+  Hi, I&apos;m <span className="font-semibold">Zakia Bashir</span>, a passionate developer driven by the endless possibilities in 
+  <span className="font-semibold">Generative AI</span>, the <span className="font-semibold">Metaverse</span>, and <span className="font-semibold">Cloud Technologies</span>. 
+  My expertise lies in crafting dynamic and user-centric web solutions, always pushing the boundaries of innovation.
+</p>
+<p className="mt-4 text-gray-600 leading-relaxed text-sm sm:text-base">
+  Outside of coding, I love exploring emerging technologies, brainstorming groundbreaking ideas, and collaborating with inspiring minds to bring transformative projects to life.
+</p>
             </div>
           </div>
 
@@ -48,7 +48,7 @@ function CreatorPage() {
             <div className="mt-6 flex justify-center space-x-8 text-center text-2xl text-[#1D3178]">
               {/* Gmail */}
               <a
-                href="mailto:muqaddasfatima576@gmail.com"
+                href="mailto:nshafeys0@gmail.com"
                 className="hover:text-[#FB2E86] transition duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -58,7 +58,7 @@ function CreatorPage() {
 
               {/* Instagram */}
               <a
-                href="https://www.instagram.com/muqaddas_fatime25/"
+                href="https://www.instagram.com"
                 className="hover:text-[#FB2E86] transition duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -68,7 +68,7 @@ function CreatorPage() {
 
               {/* GitHub */}
               <a
-                href="https://github.com/MuqaddasFatima24"
+                href="https://github.com/zakiabashir"
                 className="hover:text-[#FB2E86] transition duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -78,7 +78,7 @@ function CreatorPage() {
 
               {/* LinkedIn */}
               <a
-                href="https://www.linkedin.com/in/muqaddas-fatima-6aaa0a2b3/"
+                href="https://www.linkedin.com/in/zakia-bashir-367b41254/"
                 className="hover:text-[#FB2E86] transition duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
