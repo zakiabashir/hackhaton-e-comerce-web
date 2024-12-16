@@ -21,7 +21,7 @@ function ContactUs() {
       </div>
 
       {/* Main Content Section */}
-      <div className="max-w-[1200px] mx-auto px-4 py-12 flex flex-wrap gap-12">
+      <div className="max-w-[1200px] mx-auto px-4 py-12 flex flex-wrap  gap-12">
         {/* Left Section */}
         <div className="flex-1">
           {/* Information About Us */}
