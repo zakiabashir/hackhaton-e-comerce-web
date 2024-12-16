@@ -1,75 +1,76 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
 function Hero() {
-  const router = useRouter();
-
   return (
-    <div className="relative w-full bg-[#F3F3F3] overflow-hidden flex flex-col md:flex-row items-center justify-between">
+    <div className="flex  my-0 py-0 md:flex-row items-center justify-center mx-auto gap-8 px-6 md:px-12 lg:px-20 max-w-[1920px] max-h-[786px] md:h-[764px] relative">
 
-      {/* Left Section for Mobile & Desktop */}
-      <div className="w-full md:w-1/2 h-full flex flex-col md:flex-row items-center justify-start pl-6 md:pl-16 relative">
-
+      {/* Left Section - Bulb and Text */}
+      <div className="relative w-full md:w-1/2 flex flex-row  items-start justify-center text-center md:text-left">
+        
         {/* Bulb Image */}
-<div className="relative md:absolute top-[-30px] left-[-30px] md:left-[-100px]">
-  <Image src="/images/bulb.png" alt="Bulb" width={300} height={300} className="object-contain" />
-</div>
+        <div className=" mt-[-122px] md:top-0 left-[20px] md:left-[-20px] w-1/2 sm:w-[150px] md:w-[200px] lg:w-[387px]">
+          <Image
+            src="/images/bulb.png"
+            alt="Bulb"
+            width={387}
+            height={387}
+            className="object-contain"
+          />
+        </div>
 
-
-        {/* Text Content - Aligning next to the bulb */}
-        <div className="relative mt-6 md:mt-0 md:ml-6 text-center md:text-left">
-          {/* Pink Text */}
-          <p className="text-[#FB2E86] text-lg md:text-xl font-normal mb-2">
+        {/* Text Content */}
+        <div className="relative  md:mt-0 px-4 md:px-0 lg:w-[644px] lg:h-[248px]">
+          {/* Tagline */}
+          <p className="text-[#FB2E86] text-sm sm:text-lg md:text-xl font-medium mb-2">
             Best Furniture For Your Castle...
           </p>
 
-          {/* Bold Heading */}
-          <h1 className="text-2xl md:text-4xl font-bold text-black leading-tight mb-4">
+          {/* Heading */}
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-3xl font-bold text-black leading-tight mb-4">
             New Furniture Collection Trends in 2020
           </h1>
 
           {/* Description */}
-          <p className="text-sm md:text-lg text-gray-600 mb-6">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-6 leading-relaxed">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in
             phasellus non in justo.
           </p>
 
           {/* Shop Now Button */}
           <Link href="/shoplist">
-            <button className="px-6 py-2 bg-[#FB2E86] text-white font-text rounded-md shadow-md hover:bg-pink-600">
+            <button className="px-6 py-2 sm:px-8 sm:py-3 bg-[#FB2E86] text-white font-medium rounded-md shadow-md hover:bg-pink-600 transition duration-300">
               Shop Now
             </button>
           </Link>
         </div>
-
       </div>
 
-      {/* Right Section (Desktop, Mobile - Scrollable) */}
-      <div className="w-full md:w-1/2 h-full relative flex flex-col items-center justify-start">
-
-        {/* Pink Background Image */}
-        <div
-          className="absolute top-[60px] w-[380px] md:w-[450px] h-[380px] md:h-[450px] bg-cover bg-center z-0"
-          style={{ backgroundImage: 'url(/images/pink.png)' }}
-        ></div>
+      {/* Right Section - Pink Background, Sofa Image, Discount Badge */}
+      <div className="relative w-1/3 md:w-1/2 flex items-center justify-center">
+        {/* Pink Background Circle */}
+        <div className="absolute top-10 md:top-[40px] w-[220px] sm:w-[300px] md:w-[380px] lg:w-[450px] h-[220px] sm:h-[300px] md:h-[380px] lg:h-[450px] bg-cover bg-center rounded-full z-0"
+             style={{ backgroundImage: 'url(/images/pink.png)' }}>
+        </div>
 
         {/* Sofa Image */}
-        <div className="relative z-10 mt-[80px] mb-[20px]">
-          <Image src="/images/sofa.png" alt="Sofa" width={350} height={250} className="object-contain" />
+        <div className="relative z-10 w-[220px] sm:w-[300px] md:w-[350px] lg:w-[400px]">
+          <Image
+            src="/images/sofa.png"
+            alt="Sofa"
+            width={400}
+            height={400}
+            className="object-contain"
+          />
         </div>
 
-        {/* Blue Discount Badge */}
-        <div
-          className="absolute top-[40px] right-[75px] bg-cover bg-center w-[80px] h-[80px] flex flex-col justify-center items-center z-20"
-          style={{ backgroundImage: 'url(/images/discount.png)' }}
-        >
-          <span className="text-xl font-bold text-white">50%</span>
-          <span className="text-sm font-semibold text-white">OFF</span>
+        {/* Discount Badge */}
+        <div className="absolute top-4 sm:top-6 right-4 sm:right-6 w-[60px] sm:w-[80px] md:w-[100px] h-[60px] sm:h-[80px] md:h-[100px] bg-[#19D3DA] rounded-full flex flex-col justify-center items-center shadow-md">
+          <span className="text-white text-sm sm:text-lg md:text-xl font-bold">50%</span>
+          <span className="text-white text-[10px] sm:text-xs md:text-sm font-semibold">OFF</span>
         </div>
       </div>
-
     </div>
   );
 }

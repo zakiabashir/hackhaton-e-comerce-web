@@ -4,6 +4,7 @@
 /* globals.css */
 body{
   overflow-x: hidden;
+  max-width: 1920px;
 }
 .container {
     display: flex;

@@ -9,10 +9,10 @@ const TopBar = () => {
   const [currencyDropdown, setCurrencyDropdown] = useState(false);
 
   return (
-    <div className="bg-violet-700 text-white py-2 text-sm ">
-      <div className="w-full max-w-[1200px] mx-auto  flex items-center justify-around px-4 whitespace-nowrap">
+    <div className="bg-violet-700 max-w-[1920px]] text-white py-2 text-sm  ">
+      <div className=" max-w-[1200px] mx-auto  flex items-center justify-around px-4 flex-wrap">
         {/* Left Section */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-6 md:gap-1 md:text-sm">
           {/* Email */}
           <a href="mailto:mhhasanul@gmail.com" className="flex items-center gap-2  hover:text-gray-200">
             <FaEnvelope />
@@ -26,7 +26,7 @@ const TopBar = () => {
         </div>
 
         {/* Right Section */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 md;gap-0 md:font-[10px]">
           {/* Language Selector */}
           <div
             className="relative cursor-pointer flex items-center gap-1"
