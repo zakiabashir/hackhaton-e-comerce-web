@@ -70,13 +70,14 @@ function LatestProducts() {
             </div>
 
             {/* Product Details */}
-            <div className="text-center mt-4">
-              <h3 className="text-lg font-semibold text-[#3F509E]">Comfy Handy Craft</h3>
-              <div className="mt-2 text-gray-600 flex justify-center items-center gap-2">
-                <span className="text-red-600 font-medium line-through">$65.00</span>
-                <span className="text-gray-800">$42.00</span>
-              </div>
-            </div>
+            <div className="flex justify-between items-center mt-4">
+  <h3 className="text-lg font-semibold text-[#3F509E] text-center">Comfy Handy Craft</h3>
+  <div className="mt-2 text-gray-600 flex items-center gap-2">
+    <span className="text-gray-800">$42.00</span> {/* New Price (Left) */}
+    <span className="text-red-600 font-medium line-through">$65.00</span> {/* Old Price (Right) */}
+  </div>
+</div>
+
           </div>
         ))}
       </div>
