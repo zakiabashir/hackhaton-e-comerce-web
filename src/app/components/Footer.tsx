@@ -17,7 +17,7 @@ function Footer() {
   };
 
   return (
-    <div className="bg-gray-100 py-16 text-gray-600">
+    <div className="bg-[#F6F5FF] py-16 text-gray-600">
       <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* First Section */}
         <div>

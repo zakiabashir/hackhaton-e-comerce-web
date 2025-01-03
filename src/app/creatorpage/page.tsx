@@ -1,14 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import { FaEnvelope, FaInstagram, FaGithub, FaLinkedin, FaStar, FaHandshake } from 'react-icons/fa'; // Added icons for sections
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import { FaEnvelope, FaInstagram, FaGithub, FaLinkedin, FaHandshake } from 'react-icons/fa'; // Added icons for sections
 
 function CreatorPage() {
   return (
     <>
-      <Header />
+     
       <div className="min-h-screen bg-[#f9f9f9] py-12 px-6">
         <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8 space-y-8">
           {/* About Creator Section */}
@@ -89,7 +87,7 @@ function CreatorPage() {
           </div>
         </div>
       </div>
-      <Footer />
+      
     </>
   );
 }

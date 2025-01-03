@@ -2,14 +2,12 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 function AccountPage() {
   return (
     <>
       {/* Header */}
-      <Header />
+      
 
       {/* Page Content */}
       <div className="bg-gray-100 py-10">
@@ -79,7 +77,7 @@ function AccountPage() {
 
             {/* Create Account */}
             <div className="text-center mt-6 text-gray-600">
-              Don’t have an Account?{' '}
+              Don&apos;t have an Account?{' '}
               <Link href="/createaccount" className="text-[#FB2E86] hover:underline">
                 Create account
               </Link>
@@ -89,7 +87,7 @@ function AccountPage() {
       </div>
 
       {/* Footer */}
-      <Footer />
+      
     </>
   );
 }

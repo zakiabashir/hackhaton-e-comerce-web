@@ -3,8 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 // Define TypeScript types for blog
 type Blog = {
@@ -51,10 +49,10 @@ const blogs: Blog[] = [
 const BlogPage = () => {
   return (
     <>
-    <Header />
+   
     <div>
       {/* Header Section */}
-      <div className="py-16 ml-8 lg:ml-36 space-y-2">
+      <div className="py-16 ml-8 lg:ml-36 bg-[#F6F5FF]  space-y-2">
         <h1 className="text-4xl font-bold text-[#001F54]">Blog</h1> {/* Dark blue */}
         <div className="flex items-center gap-2">
           <Link href={"/"}>Home</Link>
@@ -164,7 +162,7 @@ const BlogPage = () => {
         </div>
       </div>
     </div>
-    <Footer />
+    
     </>
   );
 };

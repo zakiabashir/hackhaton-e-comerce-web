@@ -10,6 +10,7 @@ import {
   XMarkIcon 
 } from "@heroicons/react/24/outline";
 import TopBar from "./TopBar";
+import { FaUser } from "react-icons/fa";
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -52,13 +53,22 @@ function Header() {
                       <Link href="/cart">Cart</Link>
                     </li>
                     <li className="px-4 py-2 hover:bg-gray-100">
+                      <Link href="/grid">Grid Default</Link>
+                    </li>
+                    <li className="px-4 py-2 hover:bg-gray-100">
+                      <Link href="/shoplistsidebar">ShopList side bar</Link>
+                    </li>
+                    <li className="px-4 py-2 hover:bg-gray-100">
+                      <Link href="/singleblog">blog post</Link>
+                    </li>
+                    <li className="px-4 py-2 hover:bg-gray-100">
                       <Link href="/checkout">Billing Details</Link>
                     </li>
                     <li className="px-4 py-2 hover:bg-gray-100">
                       <Link href="/ordercompleted">Order Completed</Link>
                     </li>
                     <li className="px-4 py-2 hover:bg-gray-100">
-                      <Link href="/about-us">About Us</Link>
+                      <Link href="/about">About Us</Link>
                     </li>
                     <li className="px-4 py-2 hover:bg-gray-100">
                       <Link href="/contact-us">Contact Us</Link>
@@ -76,7 +86,7 @@ function Header() {
                 )}
               </li>
               <li>
-                <Link className="hover:text-[#FB2E86] transition-colors" href="/shoplist">
+                <Link className="hover:text-[#FB2E86] transition-colors" href="/productdetails">
                   Products
                 </Link>
               </li>
@@ -134,7 +144,7 @@ function Header() {
             Pages
           </button>
           {isPagesDropdownOpen && (
-            <ul className="w-full text-center bg-white shadow-md rounded-md text-black text-sm">
+            <ul className="w-full    text-center bg-white shadow-md rounded-md text-black text-sm">
               <li className="px-4 py-2 hover:bg-gray-100">
                 <Link href="/cart">Cart</Link>
               </li>
@@ -145,7 +155,7 @@ function Header() {
                       <Link href="/ordercompleted">Order Completed</Link>
                     </li>
               <li className="px-4 py-2 hover:bg-gray-100">
-                <Link href="/about">About Us</Link>
+                <Link href="/about">About us</Link>
               </li>
               <li className="px-4 py-2 hover:bg-gray-100">
                 <Link href="/contact-us">Contact Us</Link>
@@ -195,15 +205,25 @@ function Header() {
           </ul>
 
 {/* Mobile Cart and Wishlist */}
-<div className="flex justify-around px-4 py-2 border-t">
-            <Link href="/cart" className="flex items-center gap-1 text-sm hover:text-[#FB2E86]">
+<div className="flex flex-col px-4 py-2 border-t">
+  <div className="my-2">
+  <Link href="/account" className="flex">
+  <span>login</span><FaUser />
+  </Link>
+  </div>
+  <div className="my-2">
+  <Link href="/cart" className="flex items-center gap-1 text-sm hover:text-[#FB2E86]">
               <ShoppingCartIcon className="w-5 h-5" />
               <span>Cart</span>
             </Link>
+  </div>
+            <div className="my-2">
             <Link href="#" className="flex items-center gap-1 text-sm hover:text-[#FB2E86]">
               <HeartIcon className="w-5 h-5" />
               <span>Wishlist</span>
             </Link>
+            </div>
+            
           </div>
           {/* Mobile Search Bar */}
           <div className="flex items-center border rounded-md overflow-hidden bg-gray-100 px-4 py-2 mx-4 mt-4">

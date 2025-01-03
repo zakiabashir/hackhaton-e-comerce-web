@@ -29,7 +29,7 @@ const TopBar = () => {
         <div className="flex items-center gap-4 md;gap-0 md:font-[10px]">
           {/* Language Selector */}
           <div
-            className="relative cursor-pointer flex items-center gap-1"
+            className=" hidden relative cursor-pointer sm:flex items-center gap-1"
             onMouseEnter={() => setLanguageDropdown(true)}
             onMouseLeave={() => setLanguageDropdown(false)}
           >
@@ -47,7 +47,7 @@ const TopBar = () => {
 
           {/* Currency Selector */}
           <div
-            className="relative cursor-pointer flex items-center gap-1"
+            className="hidden relative cursor-pointer sm:flex items-center gap-1"
             onMouseEnter={() => setCurrencyDropdown(true)}
             onMouseLeave={() => setCurrencyDropdown(false)}
           >
@@ -63,7 +63,7 @@ const TopBar = () => {
           </div>
 
           {/* Login */}
-<li className="flex items-center gap-2 hover:text-gray-200">
+<li className="hidden sm:flex items-center gap-2 hover:text-gray-200">
   <Link href="/account" className="flex">
   <span>login</span><FaUser />
   </Link>

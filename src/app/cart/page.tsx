@@ -3,10 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
-// Define types for Cart Item
 type CartItem = {
   id: number;
   name: string;
@@ -17,54 +14,52 @@ type CartItem = {
   image: string;
 };
 
-// Mock cartproducts data
 const initialCartProducts: CartItem[] = [
   {
     id: 1,
-    name: "Ut diam",
-    price: 30,
-    quantity: 2,
-    color: "Red",
-    size: "M",
+    name: "Ut diam consequat",
+    price: 52,
+    quantity: 1,
+    color: "Brown",
+    size: "XL",
     image: "/images/cart1.png",
   },
   {
     id: 2,
-    name: "faucibus posuere",
-    price: 45,
+    name: "Val faucibus posuere",
+    price: 52,
     quantity: 1,
-    color: "Blue",
-    size: "L",
+    color: "Brown",
+    size: "XL",
     image: "/images/cart2.png",
   },
   {
     id: 3,
     name: "Ac vitae vestibulum",
-    price: 60,
+    price: 52,
     quantity: 1,
-    color: "Green",
-    size: "S",
+    color: "Brown",
+    size: "XL",
     image: "/images/cart3.png",
   },
   {
     id: 4,
-    name: "Elit massa dia",
-    price: 50,
-    quantity: 2,
-    color: "Yellow",
-    size: "M",
+    name: "Elit massa diam",
+    price: 52,
+    quantity: 1,
+    color: "Brown",
+    size: "XL",
     image: "/images/cart4.png",
   },
   {
     id: 5,
-    name: "Proin pharetra",
-    price: 35,
-    quantity: 3,
-    color: "Black",
-    size: "L",
+    name: "Proin pharetra elementum",
+    price: 52,
+    quantity: 1,
+    color: "Brown",
+    size: "XL",
     image: "/images/cart5.png",
   },
-
 ];
 
 const Cart = () => {
@@ -73,9 +68,7 @@ const Cart = () => {
   const updateQuantity = (id: number, newQuantity: number) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
-        item.id === id
-          ? { ...item, quantity: newQuantity > 0 ? newQuantity : 1 }
-          : item
+        item.id === id ? { ...item, quantity: Math.max(newQuantity, 1) } : item
       )
     );
   };
@@ -87,78 +80,86 @@ const Cart = () => {
     );
   };
 
-  const clearCart = () => {
-    setCartItems([]);
-  };
-
-  const resetCart = () => {
-    setCartItems(initialCartProducts);
-  };
+  const clearCart = () => setCartItems([]);
+  const resetCart = () => setCartItems(initialCartProducts);
 
   return (
     <>
-      <Header />
+      {/* Header */}
+      <div className="py-16 px-4 lg:px-28 bg-[#F6F5FF]">
+        <h1 className="text-3xl sm:text-4xl font-bold text-center lg:text-left">
+          Shopping Cart
+        </h1>
+        <div className="flex justify-center lg:justify-start items-center gap-2 text-sm sm:text-base mt-2">
+          <Link href="/" className="text-[#1D3178]">
+            Home
+          </Link>
+          <p className="text-gray-500">. Pages</p>
+          <p className="text-[#FB2E86]">Shopping Cart</p>
+        </div>
+      </div>
+
+      {/* Main Content */}
       <div className="p-6 lg:p-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Cart Items */}
         <div className="lg:col-span-2">
-          <h2 className="text-2xl font-bold mb-6 text-[#1D3178]">Your Cart</h2>
-          {cartItems.length > 0 ? (
-            <div className="space-y-6">
-              {cartItems.map((item) => (
-                <div
-                  key={item.id}
-                  className="flex items-center justify-between bg-white p-4 rounded-lg shadow-md"
-                >
-                  <div className="flex items-center space-x-4">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      width={80}
-                      height={80}
-                      className="w-20 h-20 rounded-lg object-cover"
-                    />
-                    <div>
-                      <p className="font-semibold text-[#1D3178]">{item.name}</p>
-                      <p className="text-sm text-gray-500">
-                        Color: {item.color}, Size: {item.size}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-6">
-                    <p className="text-[#1D3178]">${item.price.toFixed(2)}</p>
-                    <input
-                      type="number"
-                      value={item.quantity}
-                      onChange={(e) =>
-                        updateQuantity(item.id, Number(e.target.value))
-                      }
-                      className="w-12 px-2 py-1 border rounded-md text-center"
-                      min="1"
-                    />
-                    <p className="font-bold text-[#1D3178]">
-                      ${(item.price * item.quantity).toFixed(2)}
-                    </p>
-                  </div>
+          <div className="hidden sm:grid grid-cols-4 lg:mx-4 lg:pl-8 lg:gap-16 font-bold text-[#1D3178] mb-6">
+            <p>Product</p>
+            <p>Price</p>
+            <p>Quantity</p>
+            <p>Total</p>
+          </div>
+          {cartItems.map((item) => (
+            <div
+              key={item.id}
+              className="grid grid-cols-1 sm:grid-cols-4 gap-4 items-center bg-white p-4 rounded-lg shadow-md mb-4"
+            >
+              {/* Product */}
+              <div className="flex items-center gap-4">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  width={80}
+                  height={80}
+                  className="rounded-lg"
+                />
+                <div>
+                  <p className="font-bold text-[#1D3178]">{item.name}</p>
+                  <p className="text-sm text-gray-500">
+                    Color: {item.color}, Size: {item.size}
+                  </p>
                 </div>
-              ))}
+              </div>
+              {/* Price */}
+              <p className="text-[#1D3178] sm:text-center">
+                ${item.price.toFixed(2)}
+              </p>
+              {/* Quantity */}
+              <input
+                type="number"
+                value={item.quantity}
+                onChange={(e) =>
+                  updateQuantity(item.id, Number(e.target.value))
+                }
+                className="w-16 px-2 py-1 border rounded-md text-center sm:justify-self-center"
+                min="1"
+              />
+              {/* Total */}
+              <p className="text-[#1D3178] font-bold sm:text-center">
+                ${(item.price * item.quantity).toFixed(2)}
+              </p>
             </div>
-          ) : (
-            <p className="text-[#1D3178] text-center mt-6">
-              Your cart is empty. Add some products!
-            </p>
-          )}
-
-          {/* Action Buttons */}
-          <div className="flex justify-between mt-6">
+          ))}
+          <div className="flex flex-col sm:flex-row justify-between mt-6 gap-4">
             <button
               onClick={resetCart}
-              className="px-4 py-2 bg-[#FB2E86] text-white rounded-md text-sm hover:bg-pink-600"
+              className="w-full sm:w-auto px-4 py-2 bg-[#FB2E86] text-white rounded-md hover:bg-pink-600"
             >
               Update Cart
             </button>
             <button
               onClick={clearCart}
-              className="px-4 py-2 bg-[#FB2E86] text-white rounded-md text-sm hover:bg-pink-600"
+              className="w-full sm:w-auto px-4 py-2 bg-[#FB2E86] text-white rounded-md hover:bg-pink-600"
             >
               Clear Cart
             </button>
@@ -166,31 +167,56 @@ const Cart = () => {
         </div>
 
         {/* Cart Totals */}
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-bold mb-4 text-[#1D3178]">Cart Totals</h2>
-          <p className="flex justify-between text-[#1D3178]">
-            <span>Subtotal:</span> <span>${calculateTotal().toFixed(2)}</span>
-          </p>
-          <p className="flex justify-between mb-4 text-[#1D3178]">
-            <span>Shipping:</span> <span>$15.00</span>
-          </p>
-          <p className="flex justify-between font-bold text-lg text-[#1D3178]">
-            <span>Total:</span>{" "}
-            <span>${(calculateTotal() + 15).toFixed(2)}</span>
-          </p>
-          <li>
-                <Link href="/checkout">
-            <button
-              type="submit"
-              className="w-full py-3 bg-[#FB2E86] text-white rounded-md font-semibold hover:bg-pink-600"
-            >
-              Proceed To Checkout
-            </button>
+        <div>
+          <div className="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h2 className="text-xl font-bold text-[#1D3178] mb-4">
+              Cart Totals
+            </h2>
+            <p className="flex justify-between text-[#1D3178] mb-2">
+              <span>Subtotal:</span>
+              <span>${calculateTotal().toFixed(2)}</span>
+            </p>
+            <p className="flex justify-between text-[#1D3178] mb-4">
+              <span>Shipping:</span>
+              <span>$15.00</span>
+            </p>
+            <p className="flex justify-between font-bold text-lg text-[#1D3178]">
+              <span>Total:</span>
+              <span>${(calculateTotal() + 15).toFixed(2)}</span>
+            </p>
+            <Link href="/checkout">
+              <button className="w-full py-3 bg-[#32CD32] text-white rounded-md font-bold hover:bg-green-700 mt-4">
+                Proceed To Checkout
+              </button>
             </Link>
-            </li>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h2 className="text-xl font-bold text-[#1D3178] mb-4">
+              Calculate Shipping
+            </h2>
+            <div className="flex flex-col gap-2">
+              <input
+                type="text"
+                placeholder="Bangladesh"
+                className="w-full px-4 py-2 border rounded-md text-sm"
+              />
+              <input
+                type="text"
+                placeholder="Mirpur Dhaka"
+                className="w-full px-4 py-2 border rounded-md text-sm"
+              />
+              <input
+                type="text"
+                placeholder="Postal Code"
+                className="w-full px-4 py-2 border rounded-md text-sm"
+              />
+            </div>
+            <button className="w-full py-3 bg-[#FB2E86] text-white rounded-md font-bold hover:bg-pink-600 mt-4">
+              Calculate Shipping
+            </button>
+          </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

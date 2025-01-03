@@ -1,16 +1,14 @@
 'use client';
 
 import Image from "next/image";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 
 function ContactUs() {
   return (
     <>
-    <Header />
+    
     <div className="w-full bg-gray-50">
       {/* Header Section */}
-      <div className="bg-gray-200 py-8">
+      <div className="bg-[#F6F5FF] py-8">
         <div className="max-w-[1200px] mx-auto px-4">
           <h1 className="text-3xl font-bold text-[#101750] mb-2">Contact Us</h1>
           <p className="text-sm text-black">
@@ -117,7 +115,7 @@ function ContactUs() {
      </div>
       </div>
     </div>
-     <Footer />
+     
     </>
   
   );

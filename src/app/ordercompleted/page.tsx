@@ -2,14 +2,20 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 function OrderCompleted() {
   return (
     <>
-      <Header />
-      <div className="min-h-screen bg-gray-100 py-12">
+      {/* Header Section */}
+      <div className="py-16 px-4 lg:px-28  bg-gray-100">
+          <h1 className="text-3xl sm:text-4xl font-bold">Order colmplete</h1>
+          <div className="flex items-center gap-2 text-sm sm:text-base">
+            <Link href={"/"}>Home</Link>
+            <p>. Pages</p>
+            <p className="text-[#FB2E86]">Order colmpleted</p>
+          </div>
+        </div>
+      <div className="man-h-screen py-12 ">
         <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-8 space-y-6 text-center">
           {/* Heading */}
           <h1 className="text-3xl font-bold text-[#1D3178]">Order Completed</h1>
@@ -53,8 +59,18 @@ function OrderCompleted() {
             />
           </div>
         </div>
+        {/* Footer */}
+                <div className="mt-12 flex justify-center px-4">
+                  <Image
+                    src="/images/image 1174.png"
+                    alt="brands"
+                    width={980}
+                    height={500}
+                    className="w-full max-w-[1080px]  max-h-auto object-cover"
+                  />
+                </div>
       </div>
-      <Footer />
+      
     </>
   );
 }

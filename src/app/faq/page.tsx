@@ -1,12 +1,10 @@
 'use client';
 
-import Header from "../components/Header"; 
-import Footer from "../components/Footer"; 
 
 function FAQ() {
   return (
     <>
-      <Header /> 
+      
 
      <div className="w-full bg-gray-100 py-8">
        {/* Breadcrumb Section */}
@@ -97,8 +95,6 @@ function FAQ() {
           </div>
         </div>
       </div>
-
-      <Footer /> {/* Include the footer */}
     </>
   );
 }
