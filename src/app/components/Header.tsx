@@ -22,7 +22,7 @@ function Header() {
       <TopBar />
 
       {/* Main Header */}
-      <div className="w-full h-[80px] flex justify-center items-center border-b-2">
+      <div className="max-w-[1920px] m-auto h-[80px] flex justify-center items-center border-b-2">
         <div className="w-full max-w-[1200px] h-full flex justify-between items-center px-10">
           {/* Left Section: Logo and Search Bar */}
           <div className="flex items-center gap-8">
@@ -48,7 +48,7 @@ function Header() {
                   Pages
                 </button>
                 {isPagesDropdownOpen && (
-                  <ul className="absolute top-full mt-2 bg-white shadow-md rounded-md text-black text-sm">
+                  <ul className="absolute z-50 top-full mt-2 bg-white shadow-md rounded-md text-black text-sm">
                     <li className="px-4 py-2 hover:bg-gray-100">
                       <Link href="/cart">Cart</Link>
                     </li>

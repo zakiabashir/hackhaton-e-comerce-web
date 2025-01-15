@@ -87,7 +87,7 @@ function Footer() {
       {/* Footer Bottom */}
       <div className="mt-12 border-t border-gray-200 pt-8">
         <div className="flex justify-around flex-wrap items-center w-[90%] mx-auto">
-          <p className="text-gray-500">&copy; Webecy - All Rights Reserved. Zakia bashir</p>
+          <p className="text-gray-500">&copy; Webecy - All Rights Reserved. </p>
           <div className="flex space-x-4">
             <a href="www.facebook.com" className="w-8 h-8 rounded-full bg-[#151875] flex items-center justify-center text-white hover:bg-blue-700">
               <FaFacebookF />

@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 function Hero() {
   return (
-    <div className="flex flex-col  -mt-8 md:flex-row sm:my-28 md:my-4 pt-0 pb-10 items-center bg-violet-100 justify-center mx-auto gap-8 px-6 md:px-12 lg:px-20 max-w-[1920px]lg:h-[786px] md:h-[544px] relative">
+    <div className=" flex flex-col  -mt-8 md:flex-row sm:my-28 md:my-4 pt-0 pb-10 items-center bg-violet-100 justify-center mx-auto gap-8 px-6 md:px-12 lg:px-20 max-w-[1920px]lg:h-[786px] md:h-[544px] relative">
 
       {/* Left Section - Bulb and Text */}
       <div className="relative  md:w-1/2 flex flex-row items-center md:items-start justify-center text-center md:text-left">
