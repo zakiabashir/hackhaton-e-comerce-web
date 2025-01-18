@@ -1,17 +1,11 @@
-'use client';
+
 
 import Image from 'next/image';
 import { HeartIcon, ShoppingCartIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import { Product } from '@/types/product';
 
-function LatestProducts() {
-  const products = [
-    { id: 1, img: "/images/product1.png" },
-    { id: 2, img: "/images/product2.png", sale: true },
-    { id: 3, img: "/images/product3.png" },
-    { id: 4, img: "/images/product4.png" },
-    { id: 5, img: "/images/product5.png" },
-    { id: 6, img: "/images/product6.png" },
-  ];
+ function LatestProducts({products}:{products:Product[]}) {
+ 
 
   return (
     <div className="w-full bg-white py-20">
@@ -37,18 +31,18 @@ function LatestProducts() {
 
       {/* Product Grid */}
       <div className="w-full max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {products.map((product, index) => (
-          <div key={product.id} className="relative group">
+      {products.map((product: Product) => (
+          <div key={product._id} className="relative group">
             {/* Product Image */}
             <div className="w-full bg-gray-200 flex justify-center items-center relative overflow-hidden h-[300px] transition-all duration-300 group-hover:bg-white">
               {/* Sale Tag */}
               {product.sale && (
-                <span className="absolute top-2 left-2 bg-[#3F509E] text-white text-sm px-3 py-1 rounded">
+                <span className="bg-red-600 text-white font-bold text-sm absolute top-2 left-2 p-2">
                   Sale
                 </span>
               )}
               <Image
-                src={product.img}
+                src={product.image_url}
                 width={200}
                 height={200}
                 alt="Comfy Handy Craft"
@@ -71,10 +65,9 @@ function LatestProducts() {
 
             {/* Product Details */}
             <div className="flex justify-between items-center mt-4">
-  <h3 className="text-lg font-semibold text-[#3F509E] text-center">Comfy Handy Craft</h3>
+  <h3 className="text-lg font-semibold text-[#3F509E] text-center">{product.name}</h3>
   <div className="mt-2 text-gray-600 flex items-center gap-2">
-    <span className="text-gray-800">$42.00</span> {/* New Price (Left) */}
-    <span className="text-red-600 font-medium line-through">$65.00</span> {/* Old Price (Right) */}
+    <span className="text-gray-800">${product.price}</span> {/* New Price (Left) */}
   </div>
 </div>
 

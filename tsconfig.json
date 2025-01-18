@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "src/app/blogpost/[slug]/page.js"  ],
+, "src/app/blogpost/[slug]/page.js", "src/app/components/Productgrid.tsc"  ],
   "exclude": [
     "node_modules"
   ]

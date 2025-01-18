@@ -74,6 +74,8 @@ const shoplist: any[] = [
   ];
 
 const ShopList = () => {
+  
+  
   return (
     <>
       <div className="font-sans text-[#151875]">
